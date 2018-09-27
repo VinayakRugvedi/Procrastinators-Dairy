@@ -11,10 +11,12 @@ completedTasksArray.forEach(item => {
   buildContent(item, document.querySelector('.completedTaskContainer'))
 })
 
+// To handle the modal window
 var closer = document.querySelector('.close')
 closer.addEventListener('click', closeIt => {
-  var toBeClosed = document.querySelector('.startImg')
-  toBeClosed.parentNode.removeChild(toBeClosed)
+  var toBeClosed = document.querySelector('.modalWindow')
+  console.log(toBeClosed)
+  toBeClosed.style.display = 'none'
 })
 
 var taskAddButton = document.querySelector('.taskAddButton')
