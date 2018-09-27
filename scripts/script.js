@@ -106,7 +106,6 @@ function editTask () {
   for (let obj of array) {
     if (obj.name === this.parentNode.children[0].value) {
       objectInConcern = obj
-      console.log(objectInConcern, 'b4 editing')
       break
     }
   }
@@ -117,28 +116,49 @@ function editTask () {
 
 
   this.addEventListener('click', completeEditing => {
-    console.log(this, 'this in arrow')
     this.parentNode.children[0].setAttribute('disabled', 'edited')
     this.parentNode.children[0].style.backgroundColor = color
     this.textContent = '\u270E'
     this.removeEventListener('click', completeEditing)
     this.addEventListener('click', editTask)
     objectInConcern.name = this.parentNode.children[0].value
-    console.log(objectInConcern, 'after editing')
     localStorage.setItem(string, JSON.stringify(array))
   })
 }
 
 function addNotes () {
   this.textContent = '\u{0270C}'
-  console.log(this.parentNode.children[5])
+  var container = this.parentNode.parentNode.getAttribute('class')
+  var array, string
+
+  if(container === 'addedTaskContainer') {
+    array = toDoTasksArray
+    string = 'toDoTasks'
+  }
+  else {
+    array = completedTasksArray
+    string = 'completedTasks'
+  }
+
+  var objectInConcern
+  for (let obj of array) {
+    if (obj.name === this.parentNode.children[0].value) {
+      objectInConcern = obj
+      break
+    }
+  }
+
   this.parentNode.children[5].style.display = null
   this.removeEventListener('click', addNotes)
+
+
   this.addEventListener('click', closeNotes => {
     this.parentNode.children[5].style.display = 'none'
     this.textContent = '\u{1f4dd}'
     this.removeEventListener('click', closeNotes)
     this.addEventListener('click', addNotes)
+    objectInConcern.notes = this.parentNode.children[5].value
+    localStorage.setItem(string, JSON.stringify(array))
   })
 }
 
