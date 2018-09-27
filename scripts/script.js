@@ -163,24 +163,41 @@ function addNotes () {
 }
 
 function moveToCompletedTasks () {
-  console.log(this, 'the object complete')
-  console.log(this.parentNode)
   var parent = this.parentNode
-  parent.children[3].textContent = '\u{21B0}'
   parent.children[3].removeEventListener('click', moveToCompletedTasks)
-  parent.children[3].addEventListener('click', backToDo)
   parent.parentNode.removeChild(parent)
-  var completedTasks = document.querySelector('.completedTaskContainer')
-  completedTasks.appendChild(parent)
+
+  var objectInConcern
+  for (let obj of toDoTasksArray) {
+    if (obj.name === parent.children[0].value) {
+      objectInConcern = obj
+      toDoTasksArray.splice(toDoTasksArray.indexOf(obj), 1)
+      completedTasksArray.push(obj)
+      localStorage.setItem('completedTasks', JSON.stringify(completedTasksArray))
+      localStorage.setItem('toDoTasks', JSON.stringify(toDoTasksArray))
+      break
+    }
+  }
+  buildContent(objectInConcern, document.querySelector('.completedTaskContainer'))
 }
 
 function backToDo () {
   var parent = this.parentNode
-  parent.children[3].textContent = '\u2714'
+
   parent.children[3].removeEventListener('click', backToDo)
-  parent.children[3].addEventListener('click', moveToCompletedTasks)
-  var mainContainer = document.querySelector('.addedTaskContainer')
-  mainContainer.appendChild(parent)
+  parent.parentNode.removeChild(parent)
+  var objectInConcern
+  for (let obj of completedTasksArray) {
+    if (obj.name === parent.children[0].value) {
+      objectInConcern = obj
+      completedTasksArray.splice(completedTasksArray.indexOf(obj), 1)
+      toDoTasksArray.push(obj)
+      localStorage.setItem('completedTasks', JSON.stringify(completedTasksArray))
+      localStorage.setItem('toDoTasks', JSON.stringify(toDoTasksArray))
+      break
+    }
+  }
+  buildContent(objectInConcern, document.querySelector('.addedTaskContainer'))
 }
 
 function deleteTask () {
