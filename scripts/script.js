@@ -1,6 +1,16 @@
 var toDoTasksArray = localStorage.getItem('toDoTasks') ? JSON.parse(localStorage.getItem('toDoTasks')) : []
 var completedTasksArray = localStorage.getItem('completedTasks') ? JSON.parse(localStorage.getItem('completedTasks')) : []
 
+toDoTasksArray.forEach(item => {
+  console.log(item, 'todo')
+  buildContent(item, document.querySelector('.addedTaskContainer'))
+})
+
+completedTasksArray.forEach(item => {
+  console.log(item, 'completed')
+  buildContent(item, document.querySelector('.completedTaskContainer'))
+})
+
 var closer = document.querySelector('.close')
 closer.addEventListener('click', closeIt => {
   var toBeClosed = document.querySelector('.startImg')
