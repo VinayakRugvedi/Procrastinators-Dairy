@@ -24,6 +24,8 @@ html {
   border: 2px solid white;
   z-index: 2;
   position: relative;
+  animation-duration: 500ms;
+  animation-name: bounceIn;
 }
 
 .modalContent p {
@@ -61,6 +63,10 @@ html {
   background-repeat: no-repeat;
   background-size: 200px auto;
   background-position: 97% center;
+}
+
+h1 {
+  animation: flicker 1.5s linear infinite;
 }
 
 .tagLine {
@@ -147,6 +153,9 @@ h3 {
   font-size: 20px;
   font-family: 'Comfortaa', cursive;
   padding: 10px 5px;
+  animation-duration: 500ms;
+  animation-name: bounceIn;
+  box-shadow: 0 0 20px red;
 }
 
 .vertLine {
@@ -175,6 +184,8 @@ h3 {
   font-size: 20px;
   font-family: 'Comfortaa', cursive;
   padding: 10px 5px;
+  animation-duration: 500ms;
+  animation-name: bounceIn;
 }
 
 footer {
@@ -186,3 +197,25 @@ footer {
   position: fixed;
   bottom: 0px;
 }
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flicker {
+  0%,50%,100% {
+    color:rgba(255,255,255,0.99); text-shadow: 0 0 40px red,0 0 20px FireBrick,0 0 6px DarkRed;
+  }
+  25%,75% {
+    color:rgba(255,255,255,0.4); text-shadow: none;
+  }
