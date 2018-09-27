@@ -201,5 +201,24 @@ function backToDo () {
 }
 
 function deleteTask () {
+  var container = this.parentNode.parentNode.getAttribute('class')
   this.parentNode.parentNode.removeChild(this.parentNode)
+
+  var array, string
+  if (container === 'addedTaskContainer') {
+    array = toDoTasksArray
+    string = 'toDoTasks'
+  }
+  else {
+    array = completedTasksArray
+    string = 'completedTasks'
+  }
+
+  for (let obj of array) {
+    if( obj.name === this.parentNode.children[0].value) {
+      array.splice(array.indexOf(obj), 1)
+      localStorage.setItem(string, JSON.stringify(array))
+      break
+    }
+  }
 }
