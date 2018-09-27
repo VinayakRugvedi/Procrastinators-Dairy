@@ -1,6 +1,3 @@
-/* Peice of code which takes the task content and bl bla bla... */
-// localStorage.setItem()
-
 console.log('coming')
 var closer = document.querySelector('.close')
 closer.addEventListener('click', closeIt => {
