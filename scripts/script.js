@@ -21,52 +21,17 @@ closer.addEventListener('click', closeIt => {
 
 var taskAddButton = document.querySelector('.taskAddButton')
 taskAddButton.addEventListener('click', useContent)
+
 function useContent () {
   var taskEntered = document.querySelector('input')
   if (taskEntered.value.length !== 0) {
-    var container = document.createElement('div')
-    var addedTask = document.createElement('input')
-    var editButton = document.createElement('button')
-    var deleteButton = document.createElement('button')
-    var completeButton = document.createElement('button')
-    var notesButton = document.createElement('button')
-    var notes = document.createElement('textarea')
-
-    notes.setAttribute('placeholder', 'Your notes...')
-    notes.style.display = 'none'
-
-    addedTask.setAttribute('type', 'text')
-    addedTask.setAttribute('disabled', '')
-    addedTask.value = taskEntered.value
-    addedTask.setAttribute('class', 'addedTaskContent')
+    var dataOfTask = {}
+    dataOfTask.name = taskEntered.value
+    dataOfTask.notes = ''
+    toDoTasksArray.push(dataOfTask)
+    localStorage.setItem('toDoTasks', JSON.stringify(toDoTasksArray))
     taskEntered.value = ''
-
-    editButton.textContent = '\u270E'
-    deleteButton.textContent = '\u2716'
-    completeButton.textContent = '\u2714'
-    notesButton.textContent = '\u{1f4dd}'
-
-    editButton.setAttribute('class', 'editButton')
-    deleteButton.setAttribute('class', 'deleteButton')
-    completeButton.setAttribute('class', 'completeButton')
-    notesButton.setAttribute('class', 'notesButton')
-
-    var mainContainer = document.querySelector('.addedTaskContainer')
-
-    container.style.position = 'relative'
-    container.appendChild(addedTask)
-    container.appendChild(editButton)
-    container.appendChild(notesButton)
-    container.appendChild(completeButton)
-    container.appendChild(deleteButton)
-    container.appendChild(notes)
-
-    editButton.addEventListener('click', editTask)
-    notesButton.addEventListener('click', addNotes)
-    completeButton.addEventListener('click', moveToCompletedTasks)
-    deleteButton.addEventListener('click', deleteTask)
-
-    mainContainer.appendChild(container)
+    buildContent(dataOfTask, document.querySelector('.addedTaskContainer'))
   }
 }
 
