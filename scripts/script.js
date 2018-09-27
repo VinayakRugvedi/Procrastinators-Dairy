@@ -1,4 +1,6 @@
-console.log('coming')
+var toDoTasksArray = localStorage.getItem('toDoTasks') ? JSON.parse(localStorage.getItem('toDoTasks')) : []
+var completedTasksArray = localStorage.getItem('completedTasks') ? JSON.parse(localStorage.getItem('completedTasks')) : []
+
 var closer = document.querySelector('.close')
 closer.addEventListener('click', closeIt => {
   var toBeClosed = document.querySelector('.startImg')
