@@ -1,23 +1,22 @@
 html {
   background-image: url('../images/blacktexture.jpg');
   background-color: black;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
-.startImg {
+.modalWindow {
   width: 99.5%;
   height: 100%;
   background-color: rgba(0,0,0,0.8);
   position: absolute;
   top: 0px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   z-index: 1;
 }
 
 .modalContent {
-  /* background-image: url('images/penandpaper.jpeg') */
   width: 1000px;
   height: 600px;
   background-image: url('../images/penandpaper.jpeg');
@@ -68,10 +67,8 @@ html {
   font-family: 'Kaushan Script', cursive;
   font-weight: light;
   font-size: 20px;
-  /* text-align: center; */
   letter-spacing: 5px;
   color: white;
-  /* background-color: #45a1ff; */
   margin: 0 auto;
   padding-left: 390px;
 }
@@ -91,24 +88,18 @@ html {
   color: white;
 }
 
-.taskAddButton, .editButton, .deleteButton, .completeButton, .notesButton {
+button {
   width: 50px;
   height: 45px;
+  margin-left: 5px;
   background-color: rgba(69,161,255,0.5);
   border: 2px dotted white;
   font-size: 20px;
+  font-weight: bold;
   color: white;
 }
 
-.editButton, .deleteButton, .completeButton, .notesButton {
-  margin-left: 5px;
-  /* margin-top: 2px; */
-  font-size: 22px;
-  font-weight: bold;
-  padding: 0px;
-}
-
-.taskAddButton:hover, .editButton:hover, .deleteButton:hover, .completeButton:hover, .notesButton:hover {
+button:hover {
   background-color: rgba(255,69,0,1);
   color: black;
 }
@@ -128,10 +119,10 @@ textarea {
   z-index: 1;
 }
 
-hr {
+/* hr {
   color: #45a1ff;
-  /* border-width: 15px; */
-}
+  border-width: 15px;
+} */
 
 h3 {
   color: white;
@@ -165,7 +156,6 @@ h3 {
   bottom: 45px;
   background-color: cyan;
   width: 2px;
-  /* height: 70%; */
 }
 
 .completedTaskContainer {
@@ -186,10 +176,6 @@ h3 {
   font-family: 'Comfortaa', cursive;
   padding: 10px 5px;
 }
-
-/* .completedTaskContainer input {
-  background-color: rgba(243, 11, 135, 0.3);
-} */
 
 footer {
   padding: 10px 5px;
