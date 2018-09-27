@@ -35,6 +35,59 @@ function useContent () {
   }
 }
 
+function buildContent (item, mainContainer) {
+  console.log(item, 'item')
+  var container = document.createElement('div')
+  var addedTask = document.createElement('input')
+  var editButton = document.createElement('button')
+  var deleteButton = document.createElement('button')
+  var switchButton = document.createElement('button')
+  var notesButton = document.createElement('button')
+  var notes = document.createElement('textarea')
+
+  var className = mainContainer.getAttribute('class')
+
+  notes.setAttribute('placeholder', 'Your notes...')
+  notes.style.display = 'none'
+
+  addedTask.setAttribute('type', 'text')
+  addedTask.setAttribute('disabled', '')
+
+  addedTask.setAttribute('class', 'addedTaskContent')
+  addedTask.value = item.name
+  notes.value = item.notes
+
+  editButton.textContent = '\u270E'
+  deleteButton.textContent = '\u2716'
+  notesButton.textContent = '\u{1f4dd}'
+
+  if(className === 'addedTaskContainer') {
+    switchButton.textContent = '\u2714'
+    switchButton.addEventListener('click', moveToCompletedTasks)
+  }
+  else {
+    switchButton.textContent = '\u{21B0}'
+    switchButton.addEventListener('click', backToDo)
+  }
+  editButton.setAttribute('class', 'editButton')
+  deleteButton.setAttribute('class', 'deleteButton')
+  switchButton.setAttribute('class', 'switchButton')
+  notesButton.setAttribute('class', 'notesButton')
+
+  container.style.position = 'relative'
+  container.appendChild(addedTask)
+  container.appendChild(editButton)
+  container.appendChild(notesButton)
+  container.appendChild(switchButton)
+  container.appendChild(deleteButton)
+  container.appendChild(notes)
+
+  editButton.addEventListener('click', editTask)
+  notesButton.addEventListener('click', addNotes)
+  deleteButton.addEventListener('click', deleteTask)
+  mainContainer.appendChild(container)
+}
+
 function editTask () {
   console.log('clicked')
   console.log(this)
