@@ -1,0 +1,202 @@
+html {
+  background-image: url('../images/blacktexture.jpg');
+  background-color: black;
+  background-repeat: repeat-y;
+}
+
+.startImg {
+  width: 99.5%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalContent {
+  /* background-image: url('images/penandpaper.jpeg') */
+  width: 1000px;
+  height: 600px;
+  background-image: url('../images/penandpaper.jpeg');
+  background-size: 1000px 600px;
+  border: 2px solid white;
+  z-index: 2;
+  position: relative;
+}
+
+.modalContent p {
+  color: white;
+  font-size: 25px;
+  font-family: 'Kaushan Script', cursive;
+  bottom: 0;
+  text-align: center;
+  margin-top: 55%;
+}
+
+.close {
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.header {
+  font-family: 'Spirax', cursive;
+  padding-left: 20px;
+  /* color: #D5051D; */
+  color: white;
+  font-size: 50px;
+  letter-spacing: 3px;
+  margin: 10px auto;
+  /* text-shadow: 3px 3px 2px red; */
+
+  border-left: 20px solid #45a1ff;
+  border-right: 1000px solid #45a1ff;
+
+  background-image: url("../images/procrastinatoredit.jpg");
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+  background-position: 97% center;
+}
+
+.tagLine {
+  font-family: 'Kaushan Script', cursive;
+  font-weight: light;
+  font-size: 20px;
+  /* text-align: center; */
+  letter-spacing: 5px;
+  color: white;
+  /* background-color: #45a1ff; */
+  margin: 0 auto;
+  padding-left: 390px;
+}
+
+.newTask {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.newTask input {
+  width: 600px;
+  height: 50px;
+  border: 3px dotted white;
+  background-color: rgba(243, 11, 135, 0.3);
+  font-size: 20px;
+  padding-left: 10px;
+  color: white;
+}
+
+.taskAddButton, .editButton, .deleteButton, .completeButton, .notesButton {
+  width: 50px;
+  height: 45px;
+  background-color: rgba(69,161,255,0.5);
+  border: 2px dotted white;
+  font-size: 20px;
+  color: white;
+}
+
+.editButton, .deleteButton, .completeButton, .notesButton {
+  margin-left: 5px;
+  /* margin-top: 2px; */
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0px;
+}
+
+.taskAddButton:hover, .editButton:hover, .deleteButton:hover, .completeButton:hover, .notesButton:hover {
+  background-color: rgba(255,69,0,1);
+  color: black;
+}
+
+textarea {
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  width: 220px;
+  height: 100px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
+  letter-spacing: 2px;
+  border: 2px dashed white;
+  position: absolute;
+  top: 19px;
+  right: 257px;
+  z-index: 1;
+}
+
+hr {
+  color: #45a1ff;
+  /* border-width: 15px; */
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+
+.addedTaskContainer {
+  width: 50%;
+  float: left;
+  margin-bottom: 40px;
+}
+
+.addedTaskContainer input{
+  display: inline-block;
+  margin: 20px auto;
+  width: 73%;
+  color: white;
+  background-color: rgba(255,0,0,0.3);
+  border-radius: 5px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
+  padding: 10px 5px;
+}
+
+.vertLine {
+  position: fixed;
+  top: 245px;
+  left: 49.5%;
+  bottom: 45px;
+  background-color: cyan;
+  width: 2px;
+  /* height: 70%; */
+}
+
+.completedTaskContainer {
+  float:right;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.completedTaskContainer input {
+  display: inline-block;
+  margin: 20px auto;
+  width: 73%;
+  color: white;
+  background-color: rgba(0,255,0,0.3);
+  border-radius: 5px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
+  padding: 10px 5px;
+}
+
+/* .completedTaskContainer input {
+  background-color: rgba(243, 11, 135, 0.3);
+} */
+
+footer {
+  padding: 10px 5px;
+  background-color: #45a1ff;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  position: fixed;
+  bottom: 0px;
+}
