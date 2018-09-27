@@ -89,20 +89,43 @@ function buildContent (item, mainContainer) {
 }
 
 function editTask () {
-  console.log('clicked')
-  console.log(this)
   var editContent = this.parentNode.children[0]
   var color = editContent.style.backgroundColor
+  var container = this.parentNode.parentNode.getAttribute('class')
+  var array, string, objectInConcern
+
+  if (container === 'addedTaskContainer') {
+    array = toDoTasksArray
+    string = 'toDoTasks'
+  }
+  else {
+    array = completedTasksArray
+    string = 'completedTasks'
+  }
+
+  for (let obj of array) {
+    if (obj.name === this.parentNode.children[0].value) {
+      objectInConcern = obj
+      console.log(objectInConcern, 'b4 editing')
+      break
+    }
+  }
   editContent.removeAttribute('disabled')
   editContent.style.backgroundColor = 'rgba(243, 11, 135, 0.3)'
   this.removeEventListener('click', editTask)
   this.textContent = '\u{0270C}'
+
+
   this.addEventListener('click', completeEditing => {
+    console.log(this, 'this in arrow')
     this.parentNode.children[0].setAttribute('disabled', 'edited')
     this.parentNode.children[0].style.backgroundColor = color
     this.textContent = '\u270E'
     this.removeEventListener('click', completeEditing)
     this.addEventListener('click', editTask)
+    objectInConcern.name = this.parentNode.children[0].value
+    console.log(objectInConcern, 'after editing')
+    localStorage.setItem(string, JSON.stringify(array))
   })
 }
 
