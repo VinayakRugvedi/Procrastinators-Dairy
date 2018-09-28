@@ -44,7 +44,13 @@ function sameTaskValidation() {
   for(let obj of toDoTasksArray) {
     if(obj.name === taskEntered.value) {
       console.log("This task already exists")
-      alert("This task already exists!!!, Are you out of your conscious..?")
+      document.querySelector('.alertbg').style.display = 'flex'
+      var closer = document.querySelector('.closeAlert')
+      closer.addEventListener('click', () => {
+        var toBeClosed = document.querySelector('.alertbg')
+        console.log(toBeClosed)
+        toBeClosed.style.display = 'none'
+      })
       return false
     }
   }
