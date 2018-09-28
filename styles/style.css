@@ -115,6 +115,7 @@ h1 {
   border: 3px dotted white;
   background-color: rgba(243, 11, 135, 0.3);
   font-size: 20px;
+  font-family: 'Marcellus', serif;
   padding-left: 10px;
   color: white;
 }
@@ -140,7 +141,7 @@ textarea {
   color: white;
   width: 220px;
   height: 100px;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Marcellus', serif;
   font-size: 15px;
   letter-spacing: 2px;
   border: 2px dashed white;
@@ -176,7 +177,7 @@ h3 {
   border-radius: 5px;
   border: 2px solid white;
   font-size: 20px;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Marcellus', serif;
   padding: 10px 5px;
   animation-duration: 250ms;
   animation-name: bounceIn;
@@ -207,7 +208,7 @@ h3 {
   border-radius: 5px;
   border: 2px solid white;
   font-size: 20px;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Marcellus', serif;
   padding: 10px 5px;
   animation-duration: 250ms;
   animation-name: bounceIn;
