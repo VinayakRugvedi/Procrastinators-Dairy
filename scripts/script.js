@@ -29,7 +29,7 @@ taskEntered.addEventListener('keyup', (event) => {
 })
 
 function useContent () {
-  if (taskEntered.value.length !== 0) {
+  if (taskEntered.value.length !== 0 && sameTaskValidation()) {
     var dataOfTask = {}
     dataOfTask.name = taskEntered.value
     dataOfTask.notes = ''
@@ -38,6 +38,17 @@ function useContent () {
     taskEntered.value = ''
     buildContent(dataOfTask, document.querySelector('.addedTaskContainer'))
   }
+}
+
+function sameTaskValidation() {
+  for(let obj of toDoTasksArray) {
+    if(obj.name === taskEntered.value) {
+      console.log("This task already exists")
+      alert("This task already exists!!!, Are you out of your conscious..?")
+      return false
+    }
+  }
+  return true;
 }
 
 function buildContent (item, mainContainer) {
