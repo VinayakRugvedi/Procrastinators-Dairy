@@ -1,2 +1,2 @@
-# Procrastinators-Dairy
+# Procrastinators-Diary
 Basically a ToDo App...
