@@ -21,9 +21,14 @@ closer.addEventListener('click', closeIt => {
 
 var taskAddButton = document.querySelector('.taskAddButton')
 taskAddButton.addEventListener('click', useContent)
+var taskEntered = document.querySelector('.taskAddSpace')
+taskEntered.addEventListener('keyup', (event) => {
+  if (event.keyCode === 13) {
+    useContent()
+  }
+})
 
 function useContent () {
-  var taskEntered = document.querySelector('input')
   if (taskEntered.value.length !== 0) {
     var dataOfTask = {}
     dataOfTask.name = taskEntered.value
