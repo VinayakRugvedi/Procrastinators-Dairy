@@ -153,7 +153,7 @@ h3 {
   font-size: 20px;
   font-family: 'Comfortaa', cursive;
   padding: 10px 5px;
-  animation-duration: 500ms;
+  animation-duration: 250ms;
   animation-name: bounceIn;
   box-shadow: 0 0 20px red;
 }
@@ -184,7 +184,7 @@ h3 {
   font-size: 20px;
   font-family: 'Comfortaa', cursive;
   padding: 10px 5px;
-  animation-duration: 500ms;
+  animation-duration: 250ms;
   animation-name: bounceIn;
 }
 
@@ -203,12 +203,41 @@ footer {
     transform: scale(0.1);
     opacity: 0;
   }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
+  10% {
+    transform: scale(0.2);
+    opacity: 0.1;
+  }
+  20% {
+    transform: scale(0.3);
+    opacity: 0.2;
+  }
+  30% {
+    transform: scale(0.4);
+    opacity: 0.3;
+  }
+  40% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  65% {
+    transform: scale(0.7);
+    opacity: 0.65;
+  }
+  80% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  90% {
+    transform: scale(0.9);
+    opacity: 0.9;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
