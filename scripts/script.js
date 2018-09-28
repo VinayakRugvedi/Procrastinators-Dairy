@@ -127,6 +127,7 @@ function editTask () {
   }
   editContent.removeAttribute('disabled')
   editContent.style.backgroundColor = 'rgba(243, 11, 135, 0.3)'
+  editContent.style.boxShadow = 'none'
   this.removeEventListener('click', editTask)
   this.textContent = '\u{0270C}'
 
@@ -134,6 +135,9 @@ function editTask () {
   this.addEventListener('click', completeEditing => {
     this.parentNode.children[0].setAttribute('disabled', 'edited')
     this.parentNode.children[0].style.backgroundColor = color
+    if(container === 'addedTaskContainer'){
+    editContent.style.boxShadow = '0 0 15px red'
+    }
     this.textContent = '\u270E'
     this.removeEventListener('click', completeEditing)
     this.addEventListener('click', editTask)
