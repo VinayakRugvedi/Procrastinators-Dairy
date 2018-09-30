@@ -149,6 +149,8 @@ textarea {
   top: 19px;
   right: 257px;
   z-index: 1;
+  animation-duration: 250ms;
+  animation-name: bounceIn;
 }
 
 /* hr {
@@ -163,9 +165,12 @@ h3 {
 }
 
 .addedTaskContainer {
-  width: 50%;
+  width: 49%;
+  height: 660px;
+  padding-left: 10px;
   float: left;
-  margin-bottom: 40px;
+  overflow: auto;
+  z-index: -1;
 }
 
 .addedTaskContainer input{
@@ -194,9 +199,12 @@ h3 {
 }
 
 .completedTaskContainer {
-  float:right;
-  width: 50%;
-  margin-bottom: 40px;
+  width: 49%;
+  height: 660px;
+  padding-left: 10px;
+  float: right;
+  overflow: auto;
+  z-index: -1;
 }
 
 .completedTaskContainer input {
