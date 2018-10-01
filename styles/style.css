@@ -16,6 +16,7 @@ html {
   z-index: 1;
 }
 
+
 .alertContent {
   width: 500px;
   height: 150px;
@@ -24,7 +25,7 @@ html {
   border: 2px solid #45a1ff;
   border-radius: 20px;
   color: black;
-  box-shadow: 0px 0px 20px white;
+  box-shadow: 0px 0px 15px white;
   z-index: 2;
   position: relative;
   bottom: 180px;
@@ -45,7 +46,7 @@ html {
   border: 2px solid white;
   z-index: 2;
   position: relative;
-  animation-duration: 500ms;
+  animation-duration: 250ms;
   animation-name: bounceIn;
 }
 
@@ -91,7 +92,7 @@ html {
 }
 
 h1 {
-  animation: flicker 1.5s linear infinite;
+  animation: flicker 1.7s linear infinite;
 }
 
 .tagLine {
@@ -115,9 +116,9 @@ h1 {
   border: 3px dotted white;
   background-color: rgba(243, 11, 135, 0.3);
   font-size: 20px;
-  font-family: 'Marcellus', serif;
   padding-left: 10px;
   color: white;
+  font-family: 'Marcellus', serif;
 }
 
 button {
@@ -153,6 +154,16 @@ textarea {
   animation-name: bounceIn;
 }
 
+.topPriority {
+  display: inline;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.impTask {
+  background-color: rgba(10,10,10,0.5);
+  border: 2px dashed white;
+}
 /* hr {
   color: #45a1ff;
   border-width: 15px;
@@ -165,13 +176,14 @@ h3 {
 }
 
 .addedTaskContainer {
-  width: 49%;
+  width: 49.5%;
   height: 660px;
   padding-left: 10px;
   float: left;
   overflow: auto;
   z-index: -1;
 }
+
 
 .addedTaskContainer input{
   display: inline-block;
@@ -186,13 +198,13 @@ h3 {
   padding: 10px 5px;
   animation-duration: 250ms;
   animation-name: bounceIn;
-  box-shadow: 0 0 20px red;
+  box-shadow: 0 0 15px red;
 }
 
 .vertLine {
   position: fixed;
   top: 245px;
-  left: 49.5%;
+  left: 50%;
   bottom: 45px;
   background-color: cyan;
   width: 5px;
@@ -201,7 +213,6 @@ h3 {
 .completedTaskContainer {
   width: 49%;
   height: 660px;
-  padding-left: 10px;
   float: right;
   overflow: auto;
   z-index: -1;
@@ -237,38 +248,6 @@ footer {
     transform: scale(0.1);
     opacity: 0;
   }
-  10% {
-    transform: scale(0.2);
-    opacity: 0.1;
-  }
-  20% {
-    transform: scale(0.3);
-    opacity: 0.2;
-  }
-  30% {
-    transform: scale(0.4);
-    opacity: 0.3;
-  }
-  40% {
-    transform: scale(0.5);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(0.6);
-    opacity: 0.5;
-  }
-  65% {
-    transform: scale(0.7);
-    opacity: 0.65;
-  }
-  80% {
-    transform: scale(0.8);
-    opacity: 0.8;
-  }
-  90% {
-    transform: scale(0.9);
-    opacity: 0.9;
-  }
   100% {
     transform: scale(1);
     opacity: 1;
@@ -282,3 +261,4 @@ footer {
   25%,75% {
     color:rgba(255,255,255,0.4); text-shadow: none;
   }
+}
